@@ -11,21 +11,30 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.TextUnit
+import androidx.compose.ui.unit.TextUnitType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import id.dfroxs.todoapps.data.BarAttr
 import id.dfroxs.todoapps.ui.theme.Purple50
 
 @Composable
-fun CircularBar(modifier: Modifier) {
-    Box(modifier = modifier,
-        contentAlignment = Alignment.Center) {
+fun CircularBar(
+    modifier: Modifier,
+    data: BarAttr = BarAttr(),
+) {
+    Box(
+        modifier = modifier,
+        contentAlignment = Alignment.Center
+    ) {
         CircularProgressIndicator(
             progress = {
-                0.75f
+                data.progress
             },
             modifier = Modifier.fillMaxSize(),
-            color = Color.White,
-            strokeWidth = 10.dp,
+            color = data.barColor,
+            strokeWidth = data.strokeWidth,
             trackColor = Purple50,
             strokeCap = StrokeCap.Round,
             gapSize = 0.dp
@@ -33,10 +42,10 @@ fun CircularBar(modifier: Modifier) {
 
         Text(
             modifier = Modifier.align(Alignment.Center),
-            text = "75%",
-            fontSize = 16.sp,
+            text = "${data.progress.toInt()}%",
+            fontSize = data.textSize,
             fontWeight = FontWeight(900),
-            color = Color.White,
+            color = data.textColor,
             textAlign = TextAlign.Center,
         )
     }

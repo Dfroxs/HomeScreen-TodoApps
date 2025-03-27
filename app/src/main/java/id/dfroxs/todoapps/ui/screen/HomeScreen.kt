@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -31,11 +32,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import id.dfroxs.todoapps.R
+import id.dfroxs.todoapps.data.BarAttr
 import id.dfroxs.todoapps.data.ItemProgress
 import id.dfroxs.todoapps.ui.component.BottomBar
 import id.dfroxs.todoapps.ui.component.CircularBar
 import id.dfroxs.todoapps.ui.component.InProgressItem
 import id.dfroxs.todoapps.ui.component.StatusBar
+import id.dfroxs.todoapps.ui.component.TaskItem
 import id.dfroxs.todoapps.ui.theme.HomeScreenTodoAppsTheme
 import id.dfroxs.todoapps.ui.theme.Purple10
 import id.dfroxs.todoapps.ui.theme.Purple100
@@ -90,7 +93,15 @@ fun HomeScreen(modifier: Modifier) {
                         }
                     }
                     Row(modifier = Modifier.weight(1f)) {
-                        CircularBar(modifier = Modifier.size(90.dp))
+                        CircularBar(
+                            modifier = Modifier.size(100.dp),
+                            data = BarAttr(
+                                barColor = Color.White,
+                                progress = 0.5f,
+                                textColor = Color.White,
+                                textSize = 20.sp
+                            )
+                        )
                     }
                 }
 
@@ -124,7 +135,34 @@ fun HomeScreen(modifier: Modifier) {
                     InProgressItem(ItemProgress())
                 }
             }
-
+            Spacer(modifier = Modifier.padding(8.dp))
+            Row {
+                Text(
+                    modifier = Modifier.padding(horizontal = 16.dp),
+                    text = "Task Groups",
+                    fontWeight = FontWeight(700),
+                    fontSize = 20.sp
+                )
+                Box(
+                    modifier = Modifier
+                        .background(Purple10, CircleShape), contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        modifier = Modifier.padding(horizontal = 8.dp),
+                        text = "4",
+                        fontWeight = FontWeight(500),
+                        fontSize = 12.sp,
+                        color = Purple100,
+                        textAlign = TextAlign.Center
+                    )
+                }
+            }
+            Spacer(modifier = Modifier.padding(8.dp))
+            LazyColumn {
+                items(5) {
+                    TaskItem()
+                }
+            }
         }
     }
 }
