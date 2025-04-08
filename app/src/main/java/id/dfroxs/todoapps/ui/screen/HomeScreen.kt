@@ -2,6 +2,7 @@ package id.dfroxs.todoapps.ui.screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -19,6 +20,9 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.IconButtonColors
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -55,7 +59,8 @@ fun HomeScreen(modifier: Modifier) {
         bottomBar = {
             BottomBar()
         }) { innerPadding ->
-        Box(modifier = modifier
+        Box(
+            modifier = modifier
                 .fillMaxSize()
                 .blur(90.dp)
         ) {
@@ -67,9 +72,11 @@ fun HomeScreen(modifier: Modifier) {
                 alpha = 0.4f
             )
         }
-        LazyColumn(modifier = Modifier
+        LazyColumn(
+            modifier = Modifier
                 .fillMaxSize()
-                .padding(innerPadding))
+                .padding(innerPadding)
+        )
         {
             item {
                 Card(
@@ -79,14 +86,12 @@ fun HomeScreen(modifier: Modifier) {
                     shape = RoundedCornerShape(24.dp),
                     colors = CardDefaults.cardColors(containerColor = Purple100)
                 ) {
-                    Row(
-                        horizontalArrangement = Arrangement.Center,
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
+                    Row {
                         Column(
                             modifier = Modifier
                                 .padding(18.dp)
-                                .weight(1.5f)
+                                .weight(1.5f),
+                            verticalArrangement = Arrangement.Center
                         ) {
                             Text(
                                 text = "Your today's task almost done!",
@@ -107,10 +112,13 @@ fun HomeScreen(modifier: Modifier) {
                                 )
                             }
                         }
-                        Row(modifier = Modifier
-                            .padding(18.dp)) {
+                        Row(
+                            modifier = Modifier
+                                .padding(18.dp)
+                                .align(Alignment.CenterVertically),
+                        ) {
                             CircularBar(
-                                modifier = Modifier.size(100.dp),
+                                modifier = Modifier.size(90.dp),
                                 data = BarAttribute(
                                     barColor = Color.White,
                                     progress = 0.5f,
@@ -119,7 +127,22 @@ fun HomeScreen(modifier: Modifier) {
                                 )
                             )
                         }
-
+                        Box(
+                            modifier = Modifier
+                                .padding(top = 18.dp, end = 18.dp)
+                                .background(
+                                    Color.White.copy(alpha = 0.45f),
+                                    RoundedCornerShape(4.dp)
+                                )
+                                .clickable(onClick = {})
+                        ) {
+                            Icon(
+                                modifier = Modifier.padding(vertical = 10.dp, horizontal = 4.dp),
+                                painter = painterResource(R.drawable.ic_three_dot),
+                                tint = Color.White,
+                                contentDescription = null
+                            )
+                        }
                     }
 
                 }
