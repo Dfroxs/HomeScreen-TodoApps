@@ -25,7 +25,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import id.dfroxs.todoapps.R
-import id.dfroxs.todoapps.data.BarAttr
+import id.dfroxs.todoapps.data.BarAttribute
 import id.dfroxs.todoapps.ui.theme.Pink100
 import id.dfroxs.todoapps.ui.theme.Pink30
 
@@ -33,11 +33,10 @@ import id.dfroxs.todoapps.ui.theme.Pink30
 fun TaskItem() {
     Box {
         Card(
-            shape = RoundedCornerShape(8.dp),
+            shape = RoundedCornerShape(16.dp),
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp, vertical = 8.dp),
-            elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
             colors = CardDefaults.cardColors(containerColor = Color.White)
         ) {
             Row(modifier = Modifier.padding(horizontal = 16.dp, vertical = 12.dp), verticalAlignment = Alignment.CenterVertically) {
@@ -70,7 +69,7 @@ fun TaskItem() {
                 Spacer(modifier = Modifier.padding(8.dp))
                 CircularBar(
                     modifier = Modifier.size(40.dp),
-                    data = BarAttr(
+                    data = BarAttribute(
                         barColor = Color.Blue,
                         progress = 0.2f,
                         textColor = Color.Black,

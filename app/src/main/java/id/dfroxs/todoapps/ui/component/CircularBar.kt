@@ -7,22 +7,17 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.TextUnit
-import androidx.compose.ui.unit.TextUnitType
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import id.dfroxs.todoapps.data.BarAttr
+import id.dfroxs.todoapps.data.BarAttribute
 import id.dfroxs.todoapps.ui.theme.Purple50
 
 @Composable
 fun CircularBar(
     modifier: Modifier,
-    data: BarAttr = BarAttr(),
+    data: BarAttribute = BarAttribute(),
 ) {
     Box(
         modifier = modifier,

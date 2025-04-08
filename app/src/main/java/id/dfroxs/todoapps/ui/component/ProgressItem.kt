@@ -37,7 +37,7 @@ fun InProgressItem(data: ItemProgress) {
             modifier = Modifier.width(240.dp)
                 .padding(vertical = 8.dp)
                 .padding(start = 16.dp),
-            shape = RoundedCornerShape(12.dp),
+            shape = RoundedCornerShape(16.dp),
             colors = CardDefaults.cardColors(containerColor = data.containerColor)
         ) {
             Column(

@@ -34,7 +34,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import id.dfroxs.todoapps.R
-import id.dfroxs.todoapps.data.BarAttr
+import id.dfroxs.todoapps.data.BarAttribute
 import id.dfroxs.todoapps.data.ItemProgress
 import id.dfroxs.todoapps.ui.component.BottomBar
 import id.dfroxs.todoapps.ui.component.CircularBar
@@ -55,8 +55,7 @@ fun HomeScreen(modifier: Modifier) {
         bottomBar = {
             BottomBar()
         }) { innerPadding ->
-        Box(
-            modifier = modifier
+        Box(modifier = modifier
                 .fillMaxSize()
                 .blur(90.dp)
         ) {
@@ -68,11 +67,10 @@ fun HomeScreen(modifier: Modifier) {
                 alpha = 0.4f
             )
         }
-        LazyColumn(
-            modifier = Modifier
+        LazyColumn(modifier = Modifier
                 .fillMaxSize()
-                .padding(innerPadding),
-        ) {
+                .padding(innerPadding))
+        {
             item {
                 Card(
                     modifier = Modifier
@@ -109,10 +107,11 @@ fun HomeScreen(modifier: Modifier) {
                                 )
                             }
                         }
-                        Row(modifier = Modifier.weight(1f)) {
+                        Row(modifier = Modifier
+                            .padding(18.dp)) {
                             CircularBar(
                                 modifier = Modifier.size(100.dp),
-                                data = BarAttr(
+                                data = BarAttribute(
                                     barColor = Color.White,
                                     progress = 0.5f,
                                     textColor = Color.White,
@@ -120,6 +119,7 @@ fun HomeScreen(modifier: Modifier) {
                                 )
                             )
                         }
+
                     }
 
                 }
