@@ -42,7 +42,7 @@ fun CircularBar(
 
         Text(
             modifier = Modifier.align(Alignment.Center),
-            text = "${data.progress.toInt()}%",
+            text = String.format("%.0f", data.progress * 100) + "%",
             fontSize = data.textSize,
             fontWeight = FontWeight(900),
             color = data.textColor,

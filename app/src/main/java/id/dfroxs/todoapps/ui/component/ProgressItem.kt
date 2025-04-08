@@ -32,14 +32,11 @@ import id.dfroxs.todoapps.ui.theme.Purple50
 
 @Composable
 fun InProgressItem(data: ItemProgress) {
-    Box(
-        modifier = Modifier
-            .width(240.dp)
-            .padding(vertical = 8.dp)
-            .padding(end = 16.dp)
-    ) {
+    Box {
         Card(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier.width(240.dp)
+                .padding(vertical = 8.dp)
+                .padding(start = 16.dp),
             shape = RoundedCornerShape(12.dp),
             colors = CardDefaults.cardColors(containerColor = data.containerColor)
         ) {
