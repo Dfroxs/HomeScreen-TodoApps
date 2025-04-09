@@ -28,7 +28,7 @@ fun BoxScope.BottomNavPanel() {
         modifier = Modifier
             .align(Alignment.BottomCenter)
             .fillMaxWidth()
-            .height(64.dp)
+            .height(80.dp)
             .clip(
                 BottomNavShape(
                     cornerRadius = with(LocalDensity.current) { 20.dp.toPx() },

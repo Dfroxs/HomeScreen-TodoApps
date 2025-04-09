@@ -109,7 +109,7 @@ fun HomeScreen(modifier: Modifier) {
                                     text = "Your today's task almost done!",
                                     color = Color.White,
                                     fontWeight = FontWeight(400),
-                                    fontSize = 16.sp
+                                    fontSize = 18.sp
                                 )
                                 Button(
                                     modifier = Modifier.padding(top = 18.dp),

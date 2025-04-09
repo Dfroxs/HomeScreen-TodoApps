@@ -26,7 +26,7 @@ val inProgressItems = listOf<DataInProgress>(
     ),
     DataInProgress(
         category = "Office Project",
-        title = "Landing page revamp feature update",
+        title = "Landing page revamp feature",
         primaryColor = Yellow100,
         secondaryColor = Pink100,
         icon = R.drawable.ic_bag,

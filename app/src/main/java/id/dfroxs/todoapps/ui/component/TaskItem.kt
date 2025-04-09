@@ -56,7 +56,7 @@ fun TaskItem(data: DataTaskGroup) {
                 Column(
                     modifier = Modifier.weight(1f), verticalArrangement = Arrangement.Center
                 ) {
-                    Text(text = data.category, fontWeight = FontWeight(700))
+                    Text(text = data.category, fontWeight = FontWeight(700), fontSize = 18.sp)
                     Text(
                         text = "${data.totalTask} Task",
                         fontWeight = FontWeight(300),

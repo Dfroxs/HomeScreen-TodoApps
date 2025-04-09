@@ -73,7 +73,10 @@ fun InProgressItem(data: DataInProgress) {
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
                     text = data.title,
-                    fontWeight = FontWeight(600)
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight(600),
+                    minLines = 2,
+                    maxLines = 2
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 LinearProgressIndicator(
