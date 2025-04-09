@@ -40,8 +40,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import id.dfroxs.todoapps.R
 import id.dfroxs.todoapps.data.BarAttribute
-import id.dfroxs.todoapps.data.ItemProgress
 import id.dfroxs.todoapps.data.NavScreen
+import id.dfroxs.todoapps.data.inProgressItems
+import id.dfroxs.todoapps.data.taskGroupItems
 import id.dfroxs.todoapps.ui.component.BottomNavPanel
 import id.dfroxs.todoapps.ui.component.CircularBar
 import id.dfroxs.todoapps.ui.component.InProgressItem
@@ -73,14 +74,14 @@ fun HomeScreen(modifier: Modifier) {
             Box(
                 modifier = modifier
                     .fillMaxSize()
-                    .blur(80.dp)
+                    .blur(50.dp)
             ) {
                 Image(
                     modifier = Modifier.fillMaxSize(),
                     painter = painterResource(id = R.drawable.background),
                     contentDescription = null,
-                    contentScale = ContentScale.Crop,
-                    alpha = 0.4f
+                    contentScale = ContentScale.FillBounds,
+                    alpha = 0.5f
                 )
             }
             LazyColumn(
@@ -132,7 +133,7 @@ fun HomeScreen(modifier: Modifier) {
                                     modifier = Modifier.size(90.dp),
                                     data = BarAttribute(
                                         barColor = Color.White,
-                                        progress = 0.5f,
+                                        progress = 0.85f,
                                         textColor = Color.White,
                                         textSize = 20.sp
                                     )
@@ -177,7 +178,7 @@ fun HomeScreen(modifier: Modifier) {
                         ) {
                             Text(
                                 modifier = Modifier.padding(horizontal = 8.dp),
-                                text = "6",
+                                text = inProgressItems.size.toString(),
                                 fontWeight = FontWeight(500),
                                 fontSize = 12.sp,
                                 color = Purple100,
@@ -189,8 +190,8 @@ fun HomeScreen(modifier: Modifier) {
                 item {
                     Spacer(modifier = Modifier.padding(8.dp))
                     LazyRow {
-                        items(2) {
-                            InProgressItem(ItemProgress())
+                        items(inProgressItems.size) { index ->
+                            InProgressItem(inProgressItems[index])
                         }
                     }
                 }
@@ -210,7 +211,7 @@ fun HomeScreen(modifier: Modifier) {
                         ) {
                             Text(
                                 modifier = Modifier.padding(horizontal = 8.dp),
-                                text = "4",
+                                text = taskGroupItems.size.toString(),
                                 fontWeight = FontWeight(500),
                                 fontSize = 12.sp,
                                 color = Purple100,
@@ -222,8 +223,8 @@ fun HomeScreen(modifier: Modifier) {
                 item {
                     Spacer(modifier = Modifier.padding(8.dp))
                 }
-                items(5) {
-                    TaskItem()
+                items(taskGroupItems.size) { index ->
+                     TaskItem(taskGroupItems[index])
                 }
             }
         },

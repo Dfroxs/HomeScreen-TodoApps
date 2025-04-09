@@ -24,13 +24,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import id.dfroxs.todoapps.R
 import id.dfroxs.todoapps.data.BarAttribute
-import id.dfroxs.todoapps.ui.theme.Pink100
-import id.dfroxs.todoapps.ui.theme.Pink30
+import id.dfroxs.todoapps.data.DataTaskGroup
 
 @Composable
-fun TaskItem() {
+fun TaskItem(data: DataTaskGroup) {
     Box {
         Card(
             shape = RoundedCornerShape(16.dp),
@@ -43,24 +41,24 @@ fun TaskItem() {
                 Box(
                     modifier = Modifier
                         .size(40.dp)
-                        .background(Pink30, shape = RoundedCornerShape(8.dp)),
+                        .background(data.primaryColor.copy(alpha = 0.2f), shape = RoundedCornerShape(8.dp)),
                 ) {
                     Icon(
                         modifier = Modifier
                             .align(Alignment.Center)
                             .size(24.dp),
-                        painter = painterResource(R.drawable.ic_home),
+                        painter = painterResource(data.icon),
                         contentDescription = null,
-                        tint = Pink100
+                        tint = data.primaryColor
                     )
                 }
                 Spacer(modifier = Modifier.padding(8.dp))
                 Column(
                     modifier = Modifier.weight(1f), verticalArrangement = Arrangement.Center
                 ) {
-                    Text(text = "Office Project", fontWeight = FontWeight(700))
+                    Text(text = data.category, fontWeight = FontWeight(700))
                     Text(
-                        text = "23 Task",
+                        text = "${data.totalTask} Task",
                         fontWeight = FontWeight(300),
                         fontSize = 12.sp,
                         color = Color.Gray
@@ -70,12 +68,12 @@ fun TaskItem() {
                 CircularBar(
                     modifier = Modifier.size(40.dp),
                     data = BarAttribute(
-                        barColor = Color.Blue,
-                        progress = 0.2f,
+                        barColor = data.primaryColor,
+                        progress = data.progress,
                         textColor = Color.Black,
                         textSize = 9.sp,
                         strokeWidth = 6.dp,
-                        trackColor = Color.Gray
+                        trackColor = data.primaryColor.copy(alpha = 0.2f)
                     )
                 )
             }
@@ -86,5 +84,5 @@ fun TaskItem() {
 @Preview(showBackground = true)
 @Composable
 fun PreviewTaskGroup() {
-    Surface { TaskItem() }
+    Surface { TaskItem(DataTaskGroup()) }
 }

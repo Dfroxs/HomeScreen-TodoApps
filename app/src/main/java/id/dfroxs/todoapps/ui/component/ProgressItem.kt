@@ -27,18 +27,17 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import id.dfroxs.todoapps.data.ItemProgress
-import id.dfroxs.todoapps.ui.theme.Purple50
+import id.dfroxs.todoapps.data.DataInProgress
 
 @Composable
-fun InProgressItem(data: ItemProgress) {
+fun InProgressItem(data: DataInProgress) {
     Box {
         Card(
             modifier = Modifier.width(240.dp)
                 .padding(vertical = 8.dp)
                 .padding(start = 16.dp),
             shape = RoundedCornerShape(16.dp),
-            colors = CardDefaults.cardColors(containerColor = data.containerColor)
+            colors = CardDefaults.cardColors(containerColor = data.primaryColor.copy(alpha = 0.18f))
         ) {
             Column(
                 modifier = Modifier
@@ -48,7 +47,7 @@ fun InProgressItem(data: ItemProgress) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Text(
                         modifier = Modifier.weight(1f),
-                        text = data.title,
+                        text = data.category,
                         fontSize = 11.sp,
                         fontWeight = FontWeight(600),
                         color = Color.Gray
@@ -57,23 +56,23 @@ fun InProgressItem(data: ItemProgress) {
                         modifier = Modifier
                             .size(24.dp)
                             .background(
-                                color = data.secondaryIconColor,
+                                color = data.secondaryColor.copy(alpha = 0.3f),
                                 shape = RoundedCornerShape(8.dp)
                             )
                     ) {
                         Icon(
                             modifier = Modifier
                                 .fillMaxSize()
-                                .padding(4.dp),
+                                .padding(6.dp),
                             painter = painterResource(id = data.icon),
-                            tint = data.iconColor,
+                            tint = data.secondaryColor,
                             contentDescription = null
                         )
                     }
                 }
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = data.description,
+                    text = data.title,
                     fontWeight = FontWeight(600)
                 )
                 Spacer(modifier = Modifier.height(16.dp))
@@ -81,8 +80,8 @@ fun InProgressItem(data: ItemProgress) {
                     modifier = Modifier.height(6.dp).fillMaxWidth(),
                     progress = { 0.45f },
                     gapSize = (-4).dp,
-                    color = data.progressColor,
-                    trackColor = Purple50,
+                    color = data.primaryColor,
+                    trackColor = Color.White,
                     strokeCap = StrokeCap.Round,
                     drawStopIndicator = {}
                 )
@@ -94,5 +93,5 @@ fun InProgressItem(data: ItemProgress) {
 @Preview(showBackground = true)
 @Composable
 fun InProgressItemPreview() {
-    InProgressItem(ItemProgress())
+    InProgressItem(DataInProgress())
 }
