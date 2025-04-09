@@ -18,3 +18,5 @@ val Purple100 = Color(0xFF5F33E1)
 val Blue20 = Color(0x3403A9F4)
 val Pink100 = Color(0xFFF48FB1)
 val Pink30 = Color(0x4DFF80AB)
+
+val navColor = Color(0xEEEEE9ff)

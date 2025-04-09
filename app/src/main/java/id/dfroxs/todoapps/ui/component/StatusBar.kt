@@ -36,7 +36,7 @@ fun StatusBar() {
         title = {
             Column(modifier = Modifier.padding(4.dp)) {
                 Text(modifier = Modifier.height(18.dp), text = "Hello!", fontSize = 12.sp)
-                Text(text = "Jarot Dmonk", fontSize = 16.sp, fontWeight = FontWeight(900))
+                Text(text = "Angelia", fontSize = 16.sp, fontWeight = FontWeight(900))
             }
         },
         navigationIcon = {
