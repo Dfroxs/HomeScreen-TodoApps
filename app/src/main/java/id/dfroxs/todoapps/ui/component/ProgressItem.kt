@@ -63,7 +63,7 @@ fun InProgressItem(data: DataInProgress) {
                         Icon(
                             modifier = Modifier
                                 .fillMaxSize()
-                                .padding(6.dp),
+                                .padding(4.dp),
                             painter = painterResource(id = data.icon),
                             tint = data.secondaryColor,
                             contentDescription = null

@@ -135,7 +135,9 @@ fun HomeScreen(modifier: Modifier) {
                                         barColor = Color.White,
                                         progress = 0.85f,
                                         textColor = Color.White,
-                                        textSize = 20.sp
+                                        textSize = 20.sp,
+                                        strokeWidth = 10.dp,
+                                        trackColor = Color.White.copy(alpha = 0.3f)
                                     )
                                 )
                             }

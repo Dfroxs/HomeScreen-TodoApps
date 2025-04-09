@@ -61,6 +61,6 @@ val taskGroupItems = listOf<DataTaskGroup>(
         totalTask = 14,
         icon = R.drawable.ic_calendar,
         progress = 0.4f,
-        primaryColor = Orange100
+        primaryColor = Yellow100
     )
 )

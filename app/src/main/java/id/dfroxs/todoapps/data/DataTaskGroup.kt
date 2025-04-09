@@ -7,6 +7,6 @@ class DataTaskGroup (
     val category: String = "",
     val totalTask: Int = 0,
     val icon: Int = R.drawable.ic_bag,
-    val progress: Float = 0f,
-    val primaryColor: Color = Color.Blue
+    val progress: Float = 0.5f,
+    val primaryColor: Color = Color.Green
 )

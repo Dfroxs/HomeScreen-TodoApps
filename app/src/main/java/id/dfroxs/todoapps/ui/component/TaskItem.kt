@@ -72,8 +72,8 @@ fun TaskItem(data: DataTaskGroup) {
                         progress = data.progress,
                         textColor = Color.Black,
                         textSize = 9.sp,
-                        strokeWidth = 6.dp,
-                        trackColor = data.primaryColor.copy(alpha = 0.2f)
+                        strokeWidth = 4.dp,
+                        trackColor = data.primaryColor.copy(alpha = 0.3f)
                     )
                 )
             }

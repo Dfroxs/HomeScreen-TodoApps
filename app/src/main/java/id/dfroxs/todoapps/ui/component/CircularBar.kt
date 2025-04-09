@@ -31,7 +31,7 @@ fun CircularBar(
             modifier = Modifier.fillMaxSize().scale(scaleX = -1f, scaleY = 1f),
             color = data.barColor,
             strokeWidth = data.strokeWidth,
-            trackColor = Purple50,
+            trackColor = data.trackColor,
             strokeCap = StrokeCap.Round,
             gapSize = 0.dp
         )
