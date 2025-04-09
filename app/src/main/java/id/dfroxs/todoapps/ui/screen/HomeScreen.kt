@@ -94,7 +94,7 @@ fun HomeScreen(modifier: Modifier) {
                     Card(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(vertical = 24.dp, horizontal = 16.dp),
+                            .padding(16.dp),
                         shape = RoundedCornerShape(24.dp),
                         colors = CardDefaults.cardColors(containerColor = Purple100)
                     ) {
@@ -165,7 +165,7 @@ fun HomeScreen(modifier: Modifier) {
                     }
                 }
                 item {
-                    Spacer(modifier = Modifier.padding(4.dp))
+                    Spacer(modifier = Modifier.padding(8.dp))
                     Row {
                         Text(
                             modifier = Modifier.padding(horizontal = 16.dp),
