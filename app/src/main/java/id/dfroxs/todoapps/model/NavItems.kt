@@ -1,4 +1,4 @@
-package id.dfroxs.todoapps.data
+package id.dfroxs.todoapps.model
 
 val navItems = listOf(
     NavScreen.Home,

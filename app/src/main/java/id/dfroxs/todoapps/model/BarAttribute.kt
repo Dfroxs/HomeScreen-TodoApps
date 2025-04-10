@@ -1,4 +1,4 @@
-package id.dfroxs.todoapps.data
+package id.dfroxs.todoapps.model
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
@@ -13,5 +13,4 @@ data class BarAttribute(
     var textSize: TextUnit = 12.sp,
     var textColor: Color = Color.Black,
     var strokeWidth: Dp = 10.dp,
-
 )

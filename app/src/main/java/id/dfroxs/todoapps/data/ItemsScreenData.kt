@@ -1,6 +1,8 @@
 package id.dfroxs.todoapps.data
 
 import id.dfroxs.todoapps.R
+import id.dfroxs.todoapps.model.DataInProgress
+import id.dfroxs.todoapps.model.DataTaskGroup
 import id.dfroxs.todoapps.ui.theme.Blue100
 import id.dfroxs.todoapps.ui.theme.Orange100
 import id.dfroxs.todoapps.ui.theme.Pink100

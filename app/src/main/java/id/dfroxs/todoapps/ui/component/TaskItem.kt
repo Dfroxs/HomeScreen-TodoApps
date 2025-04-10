@@ -24,8 +24,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import id.dfroxs.todoapps.data.BarAttribute
-import id.dfroxs.todoapps.data.DataTaskGroup
+import id.dfroxs.todoapps.model.BarAttribute
+import id.dfroxs.todoapps.model.DataTaskGroup
 
 @Composable
 fun TaskItem(data: DataTaskGroup) {
