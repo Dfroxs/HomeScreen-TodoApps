@@ -18,8 +18,8 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import id.dfroxs.todoapps.data.NavScreen
-import id.dfroxs.todoapps.data.navItems
+import id.dfroxs.todoapps.model.NavScreen
+import id.dfroxs.todoapps.model.navItems
 import id.dfroxs.todoapps.ui.theme.navColor
 
 @Composable

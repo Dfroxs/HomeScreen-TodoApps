@@ -8,11 +8,14 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.statusBars
+import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.CircleShape
@@ -39,8 +42,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import id.dfroxs.todoapps.R
-import id.dfroxs.todoapps.data.BarAttribute
-import id.dfroxs.todoapps.data.NavScreen
+import id.dfroxs.todoapps.model.BarAttribute
+import id.dfroxs.todoapps.model.NavScreen
 import id.dfroxs.todoapps.data.inProgressItems
 import id.dfroxs.todoapps.data.taskGroupItems
 import id.dfroxs.todoapps.ui.component.BottomNavPanel
@@ -53,9 +56,11 @@ import id.dfroxs.todoapps.ui.theme.Purple10
 import id.dfroxs.todoapps.ui.theme.Purple100
 
 @Composable
-fun HomeScreen(modifier: Modifier) {
+fun HomeScreen() {
     Scaffold(
-        modifier = modifier,
+        modifier = Modifier
+            .fillMaxSize()
+            .windowInsetsPadding(WindowInsets.statusBars),
         topBar = {
             StatusBar()
         },
@@ -72,7 +77,7 @@ fun HomeScreen(modifier: Modifier) {
         },
         content = { innerPadding ->
             Box(
-                modifier = modifier
+                modifier = Modifier
                     .fillMaxSize()
                     .blur(50.dp)
             ) {
@@ -243,7 +248,7 @@ fun HomeScreen(modifier: Modifier) {
 fun TodoList() {
     HomeScreenTodoAppsTheme {
         Scaffold(Modifier.fillMaxSize()) { innerPadding ->
-            HomeScreen(modifier = Modifier.padding(innerPadding))
+            HomeScreen()
         }
     }
 }

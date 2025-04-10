@@ -1,4 +1,4 @@
-package id.dfroxs.todoapps.data
+package id.dfroxs.todoapps.model
 
 import androidx.compose.ui.graphics.Color
 import id.dfroxs.todoapps.R

@@ -12,8 +12,7 @@ import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import id.dfroxs.todoapps.data.BarAttribute
-import id.dfroxs.todoapps.ui.theme.Purple50
+import id.dfroxs.todoapps.model.BarAttribute
 
 @Composable
 fun CircularBar(
